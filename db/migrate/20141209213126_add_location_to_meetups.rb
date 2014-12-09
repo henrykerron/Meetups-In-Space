@@ -1,5 +1,5 @@
-class AddLocationColumnsToMeetups < ActiveRecord::Migration
-  def change
+class AddLocationToMeetups < ActiveRecord::Migration
+def change
   	add_column :meetups, :location, :string, null: false
     add_column :meetups, :address, :string, null: false
     add_column :meetups, :city, :string, null: false
