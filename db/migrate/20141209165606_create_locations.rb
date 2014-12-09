@@ -7,7 +7,7 @@ class CreateLocations < ActiveRecord::Migration
   		t.string :state, null: false
   		t.string :zipcode, null: false
 
-  		t.timestamps 
+  		t.timestamps
   	end
   end
 end
