@@ -2,12 +2,6 @@
 
 <%@meetup.each do |meetup| %>
 <ul>
-	<li><%= "Meetup Title: #{meetup.title}"%> </li>
-	<li><%= "Description: #{meetup.description}"%> </li>
-	<li><%= "Location: #{meetup.location}" %> </li>
-	<li><%= "#{meetup.address}" %> </li>
-	<li><%= "#{meetup.city}" %> </li>
-	<li><%= "#{meetup.state}" %> </li>
-	<li><%= "#{meetup.zipcode}" %> </li>
+	<li><a href="meetups/<%=meetup.id%>"><%= "Meetup Title: #{meetup.title}"%></a></li>
 </ul>
 	<%end%>
