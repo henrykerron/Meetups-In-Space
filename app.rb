@@ -30,7 +30,9 @@ def authenticate!
 end
 
 get '/' do
+  @meetup = Meetup.all
   erb :index
+
 end
 
 get '/auth/github/callback' do

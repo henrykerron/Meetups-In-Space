@@ -1,1 +1,11 @@
 <h1><%= @title %></h1>
+
+<%@meetup.each do |meetup| %>
+	<%= "Meetup Title: #{meetup.title}"%> </br>
+	<%= "Description: #{meetup.description}"%> </br>
+	<%= "Location: #{meetup.location}" %> </br>
+	<%= "#{meetup.address}" %> </br>
+	<%= "#{meetup.city}" %> </br>
+	<%= "#{meetup.state}" %> </br>
+	<%= "#{meetup.zipcode}" %>
+	<%end%>
