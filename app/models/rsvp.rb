@@ -1,4 +1,5 @@
 class Rsvp <ActiveRecord::Base
-	has_many :users
-	has_many :meetups
+	belongs_to :user
+	belongs_to :meetup
+	validates :meetup, uniqueness: { scope: :user}
 end

@@ -1,5 +1,20 @@
 <h1><%= @title %></h1>
 
+<div>
+  <form method="post" action="/meetups/<%=@meetup.id%>">
+    <div>
+      <input type="submit" style="color:#000;" value="Join Meet Up">
+    </div>
+  </form>
+</div>
+<br>
+
+
+<%@meetup.users.each do |single| %>
+<img class="profile_pic" src="<%=single.avatar_url%>" />
+	<%=single.username%>
+<%end%>
+
 <h1>Meetup Details</h1>
 <ul>
 <li><%=@meetup.title%></li>
@@ -9,4 +24,5 @@
 <li><%=@meetup.city %> </li>
 <li><%=@meetup.state %> </li>
 <li><%=@meetup.zipcode %> </li>
+<li><%=@meetup.topic %> </li>
 </ul>

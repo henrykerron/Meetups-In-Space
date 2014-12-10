@@ -14,7 +14,9 @@
     <a class="logo" href="/">Meetups in Space</a>
 
     <ul class="top-bar-section">
+      <% if signed_in? %>
     <a href = "/meetups/new">Create New</a>
+      <%end%>
       <% if signed_in? %>
         <li>Signed in as <%= current_user.username %></a></li>
         <li><a href="/sign_out">Sign out</a></li>
@@ -34,7 +36,9 @@
 <% end %>
 
 <div class="container">
+
   <%= yield %>
+
 </div>
 
 </body>

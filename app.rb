@@ -35,14 +35,35 @@ get '/' do
 end
 
 get '/meetups/new' do
+  authenticate!
   erb :new
 end
+
 
 get '/meetups/:id' do
   @id = params[:id]
   @meetup = Meetup.find(@id)
   erb :show
 end
+
+post '/meetups/:id' do
+authenticate!
+@rsvp = Rsvp.new(user_id: current_user.id, meetup_id: params[:id])
+  if @rsvp.save
+    flash[:notice] = "You've successfully joined this group"
+  else
+    flash[:notice] = "You've already joined this group"
+  end
+  redirect "/meetups/#{params[:id]}"
+end
+
+post '/' do
+  @new = Meetup.create(params[:meetup])
+  @new.save
+  flash[:notice] = "You've successfully created a meetup"
+  redirect "/meetups/#{@new.id}"
+end
+
 
 
 get '/auth/github/callback' do
@@ -65,3 +86,5 @@ end
 get '/example_protected_page' do
   authenticate!
 end
+
+
