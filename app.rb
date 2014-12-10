@@ -34,6 +34,10 @@ get '/' do
   erb :index
 end
 
+get '/meetups/new' do
+  erb :new
+end
+
 get '/meetups/:id' do
   @id = params[:id]
   @meetup = Meetup.find(@id)

@@ -1,7 +1,10 @@
+
 <h1><%= @title %></h1>
+
+<h1>Meetups</h1>
 
 <%@meetup.each do |meetup| %>
 <ul>
-	<li><a href="meetups/<%=meetup.id%>"><%= "Meetup Title: #{meetup.title}"%></a></li>
+	<li><a href="meetups/<%=meetup.id%>"><%= "#{meetup.title}"%></a></li>
 </ul>
 	<%end%>
